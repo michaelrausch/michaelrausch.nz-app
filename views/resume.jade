@@ -1,0 +1,30 @@
+extends layout-sub
+
+block custom-head
+  //No Attrs
+  
+block content
+  //About Me Section
+  .resume_about
+    h3 Michael Rausch
+    p A second year student at the University of Canterbury studying Computer Science, Software Engineering and Discrete Mathematics. 
+    
+  .resume_left
+    .resume_section
+      include ./resume_sections/education.jade
+    
+      
+    .resume_section
+      include ./resume_sections/subjects.jade
+      
+    .resume_section
+      include ./resume_sections/work.jade
+      
+  .resume_right
+    .resume_section
+      include ./resume_sections/skills.jade
+    
+    
+      
+  .cta_text.cta_resume
+    a.button(href="/contact") Contact Me

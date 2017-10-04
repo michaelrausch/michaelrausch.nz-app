@@ -1,0 +1,24 @@
+doctype html
+html(lang="en")
+  head
+    include ./includes/head.jade
+    block custom-head
+    
+  body
+    
+    div.sub_page_header(class=headerclass || 'mojito-gradient')
+      if !nomenu
+        include ./includes/menu.jade
+      div.header_text
+        center.main_heading
+          h1=title||message||error.status||'Error'
+      
+    .content
+      block content
+      
+    if includemap
+      include ./includes/fullwidth-map.jade
+    
+    if !nofooter
+      include ./includes/footer.jade
+      

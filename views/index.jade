@@ -1,0 +1,47 @@
+extends layout-main
+
+block custom-head
+  //script(src='/js/<>.js')
+  
+block content
+  //About Me Section
+  center#about_me
+    .alert#alert-bar  
+    
+    h2 About Me
+    p.about_paragraph I'm a third year student at the University of Canterbury studying Computer Science and Software Engineering. 
+    
+      .cta_text.home_cta
+        a.button(href="/contact") Contact Me
+  //End About Me Section
+  
+  .line_break
+  
+  
+  //Begin Skills Section
+  #my_skills
+    .row
+      //Row Headers
+      .col-md-4.skills_header SKILLS
+      .col-md-4.skills_col_header Languages
+      .col-md-4.skills_col_header Tools
+
+    .row
+      .col-md-4 
+
+      // Languages
+      .col-md-4
+        ul
+          li C
+          li Java
+          li Python
+          li Swift
+          li Javascript
+
+      // Tools
+      .col-md-4
+        ul
+          li GIT
+          li Unix
+          li Oracle Database    
+    

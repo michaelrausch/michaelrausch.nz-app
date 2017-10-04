@@ -1,0 +1,28 @@
+doctype html
+html(lang="en")
+  head
+    include ./includes/head.jade
+    //Custom Head Elements
+    block custom-head
+
+  body
+    header(class=headerclass)
+
+      include ./includes/menu.jade
+
+      .header_text
+        center.main_heading
+          h1=title
+
+        center
+          p#sub_heading_change Computer Science Student
+
+        center.cta_buttons
+          a.button.first(href="/resume") Resume
+          a.button(href="/contact") Contact
+
+    .content
+      block content
+
+    include ./includes/fullwidth-map.jade
+    include ./includes/footer.jade

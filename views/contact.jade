@@ -1,0 +1,74 @@
+extends layout-sub
+
+block custom-head
+  //No Attrs
+  
+block content
+  //Contact form
+  div.contact_form_area#contact_form
+    div(v-if="showSuccess")
+      div.alert.contact-alert-success(role='alert').alert-success.alert Sent
+
+    div(v-if="showError")
+      div.alert.contact-alert-success(role='alert').alert-danger.alert Failed to send message
+      
+    h1 Get In Touch
+    form.contact_form(method='post', action='/contact', v-on:submit.prevent="formSubmitted()")
+      div.form-group
+        label(for="name_contact") Your Name
+        input.form-control(type="text", id="name_contact", placeholder="Name", name="name_contact", v-model="name")
+        
+      div.form-group
+        label(for="email_contact") Your Email
+        input.form-control(type="email", id="email_contact", placeholder="Email", name="email_contact", v-model="email")
+      
+      div.form-group
+        label(for="message_contact") Your Message
+        textarea.form-control(id="message_contact", rows="3", name="message_contact", v-model="message")
+        
+      button.btn.btn-default(type='submit') Submit
+      
+  .contact_desc_area
+    h1 Alternate Contact
+    p
+      p.contactDetail
+        strong Email&nbsp;
+        |me@michaelrausch.nz
+        
+      p.contactDetail
+        strong Phone&nbsp;
+        |+64279529554
+        
+        
+  //TODO Move this into its own file
+  script.
+    var app = new Vue({
+      el: '#contact_form',
+      data: {
+        name: "",
+        email: "",
+        message: "",
+        showSuccess: false,
+        showError: false
+      },
+      methods:{
+        formSubmitted(){
+          //@TODO replace with env var
+          this.$http.post('http://michaelrauschnz.azurewebsites.net/api/contact', {
+            ReturnEmail: this.email,
+            ReturnName: this.name,
+            Message: this.message
+          }).then(response => {
+            //@TODO clean this up
+            this.showSuccess = true;
+            this.showError = false;
+          }, response => {
+            this.showSuccess = false;
+            this.showError = true;
+          });
+        }
+      },
+      
+    })
+        
+    
