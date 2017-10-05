@@ -9,6 +9,7 @@ router.get('/', function(req, res, next) {
   });
 });
 
+/* GET resume. */
 router.get('/resume', function(req, res, next) {
   res.render('resume',{
     title: "Resume",
@@ -16,6 +17,7 @@ router.get('/resume', function(req, res, next) {
   });
 });
 
+/* GET Contact form. */
 router.get('/contact', function(req, res, next) {
   res.render('contact',{
     title: "Contact Me",
@@ -23,6 +25,5 @@ router.get('/contact', function(req, res, next) {
     includemap: true
   });
 });
-
 
 module.exports = router;

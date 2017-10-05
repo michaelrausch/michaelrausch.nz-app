@@ -1,3 +1,7 @@
+/**
+* Gradients from https://uigradients.com
+*/
+
 .mojito-gradient{
   background: #1D976C; /* fallback for old browsers */
   background: -webkit-linear-gradient(to left, #1D976C , #93F9B9); /* Chrome 10-25, Safari 5.1-6 */
@@ -229,15 +233,6 @@
 	background-color: #F4D03F;
 }
 
-.sea-image{
-	background: url("../img/ssbg.jpg") no-repeat center -1340px fixed;
-}
-
 .purple{
 	background-color: #663399;
-}
-
-.dark-numbers{
-	background: url("/img/hero-bg.png");
-	background-color: #292D37;
 }
